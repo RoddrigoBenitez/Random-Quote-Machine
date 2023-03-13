@@ -29,7 +29,7 @@ const QuoteMachine = ({ quote, author, newFetch, handleNewQuote, bodyColor, butt
         <button id='new-quote' class='button' onClick={newFetch} style={{ backgroundColor: buttonColor }}>
           New Quotes
         </button>
-        <a href='twitter.com/intent/tweet' target='_blank' id='tweet-quote' style={{ backgroundColor: buttonColor }}>
+        <a href='twitter.com/intent/tweet' target='_blank' rel="noreferrer" id='tweet-quote' style={{ backgroundColor: buttonColor }}>
         Twiter
         </a>
       </div>
@@ -52,7 +52,7 @@ const App = () => {
     setButtonColor(colors[getRandomIndex()]);
   }
 
-
+//this const genera el llamado a la API para obtener quots
   const newFetch = () => {
     fetch("http://api.quotable.io/random")
     .then(res => res.json())
@@ -64,7 +64,7 @@ const App = () => {
     )
   }
 
-
+ 
   useEffect( () => {
     fetch("http://api.quotable.io/random")
     .then(res => res.json())
